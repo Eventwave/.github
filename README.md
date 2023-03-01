@@ -1,36 +1,54 @@
-
 # EventWave
 
-O EventWave é uma aplicação de gerenciamento de eventos e ingressos, que utiliza a tecnologia de microserviços para fornecer um ambiente escalável e seguro para a gestão de eventos.
+EventWave is an event and ticket management application that uses microservices technology to provide a scalable and secure event management environment.
 
-A aplicação é construída com o uso de diferentes tecnologias, incluindo Flyway, MongoDB e Postgres para o gerenciamento de dados, Kafka para a comunicação entre microserviços, Border Gateway para garantir o acesso seguro aos serviços e Discovery para garantir que cada serviço possa ser descoberto e acessado pelos demais serviços de forma segura e escalável.
+The application is built using different technologies, including Flyway, MongoDB and Postgres for data management, Kafka for communication between microservices, Border Gateway to ensure secure access to services and Discovery to ensure that each service can be discovered and accessed by other services in a secure and scalable way.
 
-## Microserviços
+## Microservices
 
-A aplicação EventWave é composta por diferentes microserviços, cada um com sua própria responsabilidade e funcionalidade:
+The EventWave application is made up of different microservices, each with its own responsibility and functionality:
 
-* Serviço de autenticação
-* Serviço de gerenciamento de eventos
-* Serviço de gerenciamento de ingressos
-* Serviço de gerenciamento de reservas
-* Serviço de processamento de pagamentos
-* Serviço de notificação
-* Serviço de análise de vendas
+* Authentication service
+* Event management service
+* Ticket management service
+* Booking management service
+* Payment processing service
+* Notification service
+* Sales analysis service
 
-Cada microserviço é implantado em um contêiner Docker, o que facilita o gerenciamento e a implantação em diferentes ambientes. Os contêineres podem ser facilmente escalados horizontalmente de acordo com a demanda.
-## Tabelas e collections
-Abaixo estão algumas das tabelas e coleções utilizadas pela aplicação EventWave, juntamente com seus relacionamentos:
+Each microservice is deployed in a Docker container, which makes it easy to manage and deploy across different environments. Containers can be easily scaled horizontally according to demand.
+## Tables and collections
+Below are some of the tables and collections used by the EventWave application, along with their relationships:
 
-**Usuários:** tabela para armazenar informações dos usuários que acessam a aplicação, incluindo nome, endereço de e-mail, senha criptografada, data de criação e atualização.
+**Users:** table to store information about users accessing the application, including name, email address, encrypted password, creation and update date.
 
-**Eventos:** coleção para armazenar informações dos eventos cadastrados na plataforma, incluindo nome, descrição, localização, data, hora, capacidade, imagem, categoria e detalhes adicionais do evento.
+**Events:** collection to store information about events registered on the platform, including name, description, location, date, time, capacity, image, category and additional details of the event.
 
-**Ingressos:** tabela para armazenar informações dos ingressos disponíveis para venda em cada evento, incluindo o evento ao qual ele pertence, o nome, o preço, a quantidade disponível e as datas de criação e atualização.
+**Tickets:** table to store information on tickets available for sale in each event, including the event to which it belongs, the name, price, available quantity and creation and update dates.
 
-**Reservas:** tabela para armazenar informações das reservas de ingressos feitas pelos usuários, incluindo o usuário que fez a reserva, o ingresso reservado, a quantidade, o status (pendente, confirmado ou cancelado) e as datas de criação e atualização.
+**Reservations:** table to store information on ticket reservations made by users, including the user who made the reservation, reserved ticket, quantity, status (pending, confirmed or cancelled) and creation and update dates.
 
-Além dessas tabelas e coleções, a aplicação EventWave também utiliza outras tabelas e coleções para armazenar informações adicionais sobre os usuários, eventos e reservas.
-## Utilização do Docker
-Para implantar e executar a aplicação EventWave, é necessário configurar e iniciar cada microserviço individualmente, garantindo que todos estejam se comunicando corretamente. Cada microserviço possui sua própria configuração e conjunto de dependências, que devem ser gerenciados separadamente.
+In addition to these tables and collections, the EventWave application also uses other tables and collections to store additional information about users, events and reservations.
+## Using Docker
+To deploy and run the EventWave application, you need to configure and start each microservice individually, ensuring that they are all communicating correctly. Each microservice has its own configuration and set of dependencies, which must be managed separately.
 
-Para facilitar o gerenciamento e a implantação em diferentes ambientes, cada microserviço é implantado em um cont
+For easy management and deployment in different environments, each microservice is deployed in a Docker container. Docker allows each service to run in an isolated and independent environment, making it easy to deploy and scale.
+
+## Installation
+To install and run the EventWave application, follow these steps:
+
+1.  Clone the Github repository for your development environment.
+2. Make sure you have Docker installed on your machine.
+3. Start each microservice with the docker-compose up command.
+4. Access the application in your browser at http://localhost:8080.
+
+## Contribution
+If you would like to contribute to the EventWave application, please follow these steps:
+
+1. Fork the Github repository.
+2. Clone the repository to your development environment.
+3. Make the desired changes on a new branch.
+4. Open a pull request for review.
+
+## Contact
+For any questions or suggestions, please contact us at daniellygj@gmail.com.
