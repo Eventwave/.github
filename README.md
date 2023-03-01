@@ -18,7 +18,7 @@ A aplicação EventWave é composta por diferentes microserviços, cada um com s
 * Serviço de análise de vendas
 
 Cada microserviço é implantado em um contêiner Docker, o que facilita o gerenciamento e a implantação em diferentes ambientes. Os contêineres podem ser facilmente escalados horizontalmente de acordo com a demanda.
-### Tabelas e collections
+## Tabelas e collections
 Abaixo estão algumas das tabelas e coleções utilizadas pela aplicação EventWave, juntamente com seus relacionamentos:
 
 **Usuários:** tabela para armazenar informações dos usuários que acessam a aplicação, incluindo nome, endereço de e-mail, senha criptografada, data de criação e atualização.
