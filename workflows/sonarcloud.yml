@@ -36,8 +36,5 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
           ./mvnw clean org.jacoco:jacoco-maven-plugin:prepare-agent verify --batch-mode --no-transfer-progress || true
-          ./mvnw -B jacoco:report org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
-          -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml \
-          -Dsonar.coverage.exclusions="**/*Test*","**/*Exception*","**/*Error*" \
-          -Dsonar.test.inclusions="**/*Test.java" \
-          -Dsonar.test.exclusions="**/*Exception*","**/*Error*"
+          ./mvnw -B jacoco:report org.sonarsource.scanner.maven:sonar-maven-plugin:sonar 
+
