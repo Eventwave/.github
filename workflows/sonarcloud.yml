@@ -35,6 +35,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
-          # Adicione os comandos para construir seu projeto aqui, por exemplo:
-          # ./mvnw clean verify --batch-mode --no-transfer-progress || true
+          ./mvnw clean verify --batch-mode --no-transfer-progress || true
           ./mvnw -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
