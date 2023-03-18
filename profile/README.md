@@ -1,46 +1,37 @@
 # TicketFlow
 
-TicketFlow is an event and ticket management application that uses microservices technology to provide a scalable and secure event management environment.
+TicketFlow is a comprehensive ticketing system designed to manage event ticket sales. The project is built using microservices architecture, utilizing services such as Border Gateway, Eureka, Config Server, and RabbitMQ for effective communication and data flow between the services.
 
-The application is built using different technologies, including Flyway, MongoDB and Postgres for data management, Kafka for communication between microservices, Border Gateway to ensure secure access to services and Discovery to ensure that each service can be discovered and accessed by other services in a secure and scalable way.
+![diagrama](https://github.com/TicketFlow/.github/blob/main/utils/diagrama.png)
 
-## Microservices
 
-The TicketFlow application is made up of different microservices, each with its own responsibility and functionality:
+Services Overview
+The system is comprised of several services, each responsible for handling specific aspects of the ticketing process.
 
-* Authentication service
-* Event management service
-* Ticket management service
-* Booking management service
-* Payment processing service
-* Notification service
-* Sales analysis service
+* **CouponManager**: Manages discount coupons that can be applied during the checkout process.
+* **Authentication**: Handles user authentication and authorization for accessing the platform.
+* **TicketManager**: Manages the tickets available for sale for each event, including adding, removing, and updating tickets.
+* **PaymentProcessing**: Processes payments for ticket reservations.
+* **EventManager**: Manages events, including adding, removing, and updating events.
+* **SalesManager**: Manages the shopping cart and sales transactions.
+* **SalesAnalytics**: Analyzes sales data and provides useful insights for business decision-making. Generates reports on popular events, top-selling tickets, and overall revenue.
+* **Notification**: Sends event notifications to users.
 
-Each microservice is deployed in a Docker container, which makes it easy to manage and deploy across different environments. Containers can be easily scaled horizontally according to demand.
-## Tables and collections
-Below are some of the tables and collections used by the TicketFlow application, along with their relationships:
+### Border Gateway
+The Border Gateway is the entry point for all client requests. It is responsible for routing requests to the appropriate microservices and handling any errors or exceptions that may occur. This layer provides an additional level of security by filtering out malicious requests and enabling the implementation of authentication and rate-limiting policies.
 
-**Users:** table to store information about users accessing the application, including name, email address, encrypted password, creation and update date.
+### Eureka
+Eureka is a service registry and discovery tool used in this project to manage the microservices. It enables each microservice to discover and communicate with other microservices, providing load balancing and fault tolerance.
 
-**Events:** collection to store information about events registered on the platform, including name, description, location, date, time, capacity, image, category and additional details of the event.
+### Config Server
+The Config Server centralizes configuration data across all microservices, ensuring consistent configuration settings for each service. This enables easy management and updating of configurations without the need to restart services or redeploy the system.
 
-**Tickets:** table to store information on tickets available for sale in each event, including the event to which it belongs, the name, price, available quantity and creation and update dates.
+### RabbitMQ
+RabbitMQ is a message broker used for communication between microservices. It ensures reliable and efficient data transfer, allowing for asynchronous communication and decoupling of services.
 
-**Reservations:** table to store information on ticket reservations made by users, including the user who made the reservation, reserved ticket, quantity, status (pending, confirmed or cancelled) and creation and update dates.
-
-In addition to these tables and collections, the TicketFlow application also uses other tables and collections to store additional information about users, events and reservations.
-## Using Docker
-To deploy and run the TicketFlow application, you need to configure and start each microservice individually, ensuring that they are all communicating correctly. Each microservice has its own configuration and set of dependencies, which must be managed separately.
-
-For easy management and deployment in different environments, each microservice is deployed in a Docker container. Docker allows each service to run in an isolated and independent environment, making it easy to deploy and scale.
-
-## Installation
-To install and run the TicketFlow application, follow these steps:
-
-1.  Clone the Github repository for your development environment.
-2. Make sure you have Docker installed on your machine.
-3. Start each microservice with the docker-compose up command.
-4. Access the application in your browser at http://localhost:8080.
+### Docker and Docker Compose
+Docker is used to package each microservice into a container, providing an isolated environment that includes all dependencies required for the service to run. This ensures consistency across development, testing, and production environments, and simplifies the deployment process.
+It is used to define and manage the entire system, including all microservices and their dependencies. It allows for easy deployment, scaling, and management of the services using a single configuration file.
 
 ## Contribution
 If you would like to contribute to the TicketFlow application, please follow these steps:
