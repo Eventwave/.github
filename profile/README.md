@@ -2,9 +2,8 @@
 
 TicketFlow is a powerful and comprehensive ticketing system designed to streamline event ticket sales. Built using a microservices architecture, TicketFlow leverages services like Border Gateway, Eureka, Config Server, and RabbitMQ for seamless communication and data flow between services.
 
-![diagrama](https://github.com/TicketFlow/.github/blob/main/utils/diagrama.png)
-
 #### Table of Contents
+* [Project Diagram](#Project-Diagram)
 * [Services Overview](#Services-Overview)
 * [Border Gateway](#Border-Gateway)
 * [Eureka](#Eureka)
@@ -14,6 +13,10 @@ TicketFlow is a powerful and comprehensive ticketing system designed to streamli
 * [Getting Started](#Getting-Started)
 * [Contribution](#Contribution)
 * [Contact](#Contact)
+
+### Project Diagram
+In the following diagram, we present the architecture of the TicketFlow project, showcasing how various components and services interact with one another to create a cohesive and efficient ticketing system. By examining this diagram, you can gain a better understanding of the relationships between the different microservices, the data flow, and the overall structure of the project.
+![diagrama](https://github.com/TicketFlow/.github/blob/main/utils/diagrama.png)
 
 ### Services Overview
 The system is comprised of several services, each responsible for handling specific aspects of the ticketing process:
