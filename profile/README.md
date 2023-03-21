@@ -17,6 +17,7 @@ TicketFlow is a powerful and comprehensive ticketing system designed to streamli
 ### Project Diagram
 In the following diagram, we present the architecture of the TicketFlow project, showcasing how various components and services interact with one another to create a cohesive and efficient ticketing system. By examining this diagram, you can gain a better understanding of the relationships between the different microservices, the data flow, and the overall structure of the project.
 ![diagrama](https://github.com/TicketFlow/.github/blob/main/utils/diagrama.png)
+Refer to the sections below for a detailed explanation of each service and how they contribute to the functionality of the TicketFlow system.
 
 ### Services Overview
 The system is comprised of several services, each responsible for handling specific aspects of the ticketing process:
