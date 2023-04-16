@@ -1,6 +1,6 @@
 # TicketFlow
 
-TicketFlow is a powerful and comprehensive ticketing system designed to streamline event ticket sales. Built using a microservices architecture, TicketFlow leverages services like Border Gateway, Eureka, Config Server, and RabbitMQ for seamless communication and data flow between services.
+TicketFlow is a powerful and comprehensive ticketing system designed to streamline event ticket sales. Built using a microservices architecture, TicketFlow leverages services like Border Gateway, Eureka, Config Server, and RabbitMQ for seamless communication and data flow between services. Additionally, it incorporates Keycloak and HashiCorp Vault to enhance its AuthenticationService for secure and efficient user management.
 
 #### Table of Contents
 * [Project Diagram](#Project-Diagram)
@@ -22,7 +22,7 @@ Refer to the sections below for a detailed explanation of each service and how t
 ### Services Overview
 The system is comprised of several services, each responsible for handling specific aspects of the ticketing process:
 * **[CouponManager](https://github.com/TicketFlow/CouponManager)**: Manages discount coupons that can be applied during the checkout process.
-* **[Authentication](https://github.com/TicketFlow/Authentication)**: Handles user authentication and authorization for accessing the platform.
+* **[Authentication](https://github.com/TicketFlow/Authentication)**: Handles user authentication and authorization for accessing the platform using Keycloak.
 * **[TicketManager](https://github.com/TicketFlow/TicketManager)**: Manages the tickets available for sale for each event, including adding, removing, and updating tickets.
 * **[PaymentProcessing](https://github.com/TicketFlow/PaymentProcessing)**: Processes payments for ticket reservations.
 * **[EventManager](https://github.com/TicketFlow/EventManager)**: Manages events, including adding, removing, and updating events.
@@ -33,8 +33,8 @@ The system is comprised of several services, each responsible for handling speci
 ### Border Gateway
 The [Border Gateway](https://github.com/TicketFlow/BorderGateway) is the entry point for all client requests. It is responsible for routing requests to the appropriate microservices and handling any errors or exceptions that may occur. This layer provides an additional level of security by filtering out malicious requests and enabling the implementation of authentication and rate-limiting policies.
 
-### Eureka
-[Eureka](https://github.com/TicketFlow/Discovery) is a service registry and discovery tool used in this project to manage the microservices. It enables each microservice to discover and communicate with other microservices, providing load balancing and fault tolerance.
+### Discovery
+[Discovery](https://github.com/TicketFlow/Discovery) is a service registry and discovery tool that utilizes Eureka in this project to manage the microservices. It enables each microservice to discover and communicate with other microservices, providing load balancing and fault tolerance.
 
 ### Config Server
 The [Config Server](https://github.com/TicketFlow/Configuration) centralizes configuration data across all microservices, ensuring consistent configuration settings for each service. This enables easy management and updating of configurations without the need to restart services or redeploy the system.
